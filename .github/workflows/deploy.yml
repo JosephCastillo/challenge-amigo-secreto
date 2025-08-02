@@ -1,22 +1,21 @@
-name: Deploy static site to Github Pages
+name: Deploy static site to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Only deploy on push to main branch
+      - main  # Solo cuando hay push en main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-        - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # Adjust this path to your static site output directory
-          publish_branch: gh-pages # The branch where the site will be deployed
-          force_orphan: true # Create an orphan branch if it doesn't exist
-          keep_files: false # Remove old files not present in the new build 
+          publish_dir: .   # Carpeta raíz del proyecto
+          publish_branch: gh-pages
