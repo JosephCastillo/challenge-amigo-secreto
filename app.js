@@ -33,7 +33,22 @@ function agregarAmigo() {
         agregarAmigoArray();
         // Limpiar el campo de entrada
         limpiarCampo();
+        // Recorrer el array y mostrar los amigos
+        recorrerArrayAmigos();
     }
 }
 
 
+// Funcion para recorrer el array amigos
+function recorrerArrayAmigos(){
+    let listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = ""; // Limpiar la lista antes de agregar nuevos amigos
+    for (let i=0; i < nombres.length; i++){
+        // Crear un nuevo elemento de lista
+        let li = document.createElement("li");
+        // Asignar el nombre del amigo al contenido del elemento
+        li.textContent = nombres[i];
+        // Agregar el elemento a la lista
+        listaAmigos.appendChild(li);
+    }
+}
