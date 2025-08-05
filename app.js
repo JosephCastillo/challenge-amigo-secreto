@@ -52,3 +52,19 @@ function recorrerArrayAmigos(){
         listaAmigos.appendChild(li);
     }
 }
+
+// Función para seleccionar un amigo al azar
+function sortearAmigo() {
+    if (nombres.length < 2) {
+        alert("Debes agregar al menos dos amigos para seleccionar un amigo secreto.");
+        return
+    }
+    // Generar un índice aleatorio
+    let indiceAleatorio = Math.floor(Math.random() * nombres.length);
+    // obtener el nombre del amigo secreto
+    let amigoSeleccionado = nombres[indiceAleatorio];
+    // Mostrar el nombre del amigo secreto la lista
+    let amigoSecreto = document.getElementById("resultado");
+    amigoSecreto.textContent = "Tu amigo secreto es: " + amigoSeleccionado;
+
+    }
